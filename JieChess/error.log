@@ -1,0 +1,16 @@
+Exception in thread "temp_deletion_starter" java.lang.InternalError: internal error: SHA-1 not available.
+	at sun.security.provider.SecureRandom.init(SecureRandom.java:108)
+	at sun.security.provider.SecureRandom.<init>(SecureRandom.java:79)
+	at java.security.SecureRandom.getDefaultPRNG(SecureRandom.java:198)
+	at java.security.SecureRandom.<init>(SecureRandom.java:162)
+	at java.io.File$TempDirectory.<clinit>(File.java:1901)
+	at java.io.File.createTempFile(File.java:2006)
+	at java.io.File.createTempFile(File.java:2070)
+	at com.exe4j.runtime.util.WinDel.scheduleDeletion(WinDel.java:85)
+	at com.exe4j.runtime.WinLauncher$3.run(WinLauncher.java:126)
+Caused by: java.security.NoSuchAlgorithmException: SHA MessageDigest not available
+	at sun.security.jca.GetInstance.getInstance(GetInstance.java:159)
+	at java.security.Security.getImpl(Security.java:695)
+	at java.security.MessageDigest.getInstance(MessageDigest.java:167)
+	at sun.security.provider.SecureRandom.init(SecureRandom.java:106)
+	... 8 more
